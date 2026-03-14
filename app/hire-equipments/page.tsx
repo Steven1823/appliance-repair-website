@@ -12,26 +12,32 @@ const equipments = [
   {
     name: 'Digital Multimeter Kit',
     useCase: 'Voltage, continuity, resistance, and current checks for appliances.',
+    details: 'Includes probes and leads for quick electrical diagnostics on washing machines, refrigerators, ovens, and microwaves. Ideal for fault tracing and safety checks during repairs.',
   },
   {
     name: 'Refrigerant Manifold Gauge Set',
     useCase: 'Pressure diagnostics for refrigerators and air conditioning systems.',
+    details: 'Used to read high-side and low-side pressure, verify refrigerant charge, and support system troubleshooting on cooling appliances.',
   },
   {
     name: 'Vacuum Pump',
     useCase: 'System evacuation before refrigerant charging and sealed system service.',
+    details: 'Removes moisture and air from sealed cooling systems before charging, improving system efficiency and preventing compressor issues.',
   },
   {
     name: 'Leak Detector',
     useCase: 'Detects refrigerant leaks in cooling lines and joints.',
+    details: 'Helps pinpoint hidden leaks around joints, valves, and tubing to reduce repeat failures and improve repair quality.',
   },
   {
     name: 'Appliance Dolly & Moving Straps',
     useCase: 'Safe movement of heavy units like fridges, washers, and dryers.',
+    details: 'Designed for safe transport during installation and repair jobs, reducing risk of damage to appliances, floors, and walls.',
   },
   {
     name: 'Insulation Resistance Tester',
     useCase: 'Electrical safety and insulation health checks on appliance circuits.',
+    details: 'Measures insulation integrity in motors, heating elements, and wiring to identify potential short circuits or electric leakage.',
   },
 ]
 
@@ -64,10 +70,18 @@ export default function HireEquipmentsPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {equipments.map((item) => (
-                <div key={item.name} className="border border-gray-200 rounded-lg p-5 hover:border-orange-400 transition-colors duration-300">
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">{item.name}</h3>
-                  <p className="text-gray-600">{item.useCase}</p>
-                </div>
+                <details key={item.name} className="group border border-gray-200 rounded-lg p-5 hover:border-orange-400 transition-colors duration-300">
+                  <summary className="cursor-pointer list-none">
+                    <h3 className="text-xl font-bold text-gray-800 mb-2">{item.name}</h3>
+                    <p className="text-gray-600">{item.useCase}</p>
+                    <span className="inline-block mt-3 text-orange-500 font-semibold text-sm group-open:text-orange-600">
+                      Learn more
+                    </span>
+                  </summary>
+                  <p className="text-gray-600 mt-4 pt-4 border-t border-gray-100">
+                    {item.details}
+                  </p>
+                </details>
               ))}
             </div>
           </div>
