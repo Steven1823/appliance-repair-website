@@ -370,21 +370,19 @@ video#background-video,
 section > video:first-child,
 .hero > video,
 video[poster] {
-  filter: 
-    contrast(1.08)        /* slightly sharper mid-tones */
-    brightness(1.04)      /* lift overall luminance */
-    saturate(1.1)         /* richer colors */
-    drop-shadow(0 0 0);   /* enhanced clarity */
-
-  image-rendering: crisp-edges;
+  filter: contrast(1.25) brightness(1.3) saturate(1.35) drop-shadow(0 0 0px transparent);
+  opacity: 1 !important;
+  mix-blend-mode: normal !important;
+  transform: translateZ(0) scale(1.03);
   will-change: transform;
-  transform: translateZ(0) scale(1.0);
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   -webkit-font-smoothing: antialiased;
   -webkit-transform: translateZ(0);
-  
-  /* Enhance video codec rendering */
+  z-index: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: center;
 }
