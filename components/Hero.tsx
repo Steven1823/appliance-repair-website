@@ -69,7 +69,7 @@ export default function Hero() {
           muted
           playsInline
           poster={slide.poster}
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover bg-video"
         >
           <source src={slide.video} type="video/mp4" />
           <source src={slide.video} type="video/quicktime" />
